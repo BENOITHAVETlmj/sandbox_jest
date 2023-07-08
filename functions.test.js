@@ -1,5 +1,26 @@
 const functions = require('./functions');
 
+
+// beforeEach(() => initDataBase());
+// afterEach(() => closeDataBase());
+
+
+// const initDataBase = () => console.log('data base initialized...');
+// const closeDataBase = () => console.log('data base initialized...');
+const checkAuth = () => console.log('check authoziration...');
+
+describe('Check authorization', () => {
+   beforeEach(() => checkAuth());
+   
+   const loginForm = { login: 'loginTest', password: 'AaATII81'}
+   test('User name is present', () => {
+      expect(loginForm.login.length).toBeGreaterThanOrEqual(0)
+   });
+   test('Auth has good token', () => {
+    expect(loginForm.password).toEqual('AaATII81')
+ })
+});
+
 it('Adds 2 + 2 to equal 4', () => {
     expect(functions.add(2, 2)).toBe(4);
 });
